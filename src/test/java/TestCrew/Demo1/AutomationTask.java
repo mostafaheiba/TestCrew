@@ -25,6 +25,7 @@ public class AutomationTask extends InitTest {
 		} catch (Exception e) {
 			fail("Failed to Find Title");
 		}
+		System.out.println(driver.findElement(By.xpath("//td//marquee[@class='heading3']")).getText());
 		Thread.sleep(2000);
 	}
 
@@ -38,8 +39,9 @@ public class AutomationTask extends InitTest {
 		} catch (Exception e) {
 			fail("Failed to Find Manager ID");
 		}
-		Assert.assertEquals("//td[contains(text(),'Manger Id : mngr325739')]",
-				"//td[contains(text(),'Manger Id : mngr325739')]");
+		Assert.assertEquals("Manger Id : mngr325739"",
+				driver.findElement(By.xpath("//table[@class='layout']/tbody/tr/td/table//tr[@class='heading3']//td"))
+						.getText());
 		System.out.println(driver.findElement(By.xpath("//td[contains(text(),'Manger Id : mngr325739')]")).getText());
 		Thread.sleep(3000);
 	}
@@ -75,8 +77,9 @@ public class AutomationTask extends InitTest {
 		} catch (Exception e) {
 			fail("Failed to Customer Registered Successfully");
 		}
-		Assert.assertEquals("//td//p[contains(text(),'Customer Registered Successfully!!!')]",
-				"//td//p[contains(text(),'Customer Registered Successfully!!!')]");
+		Assert.assertEquals("Customer Registered Successfully!!!",
+				driver.findElement(By.xpath("//td//p[contains(text(),'Customer Registered Successfully!!!')]"))
+						.getText());
 		System.out.println(driver
 				.findElement(By.xpath("//td//p[contains(text(),'Customer Registered Successfully!!!')]")).getText());
 	}
